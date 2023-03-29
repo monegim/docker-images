@@ -27,7 +27,7 @@ jobs:
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
-          image: a${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
           # options: -v ${{ github.workspace }}:/var/www
           run: |
               nginx --version
