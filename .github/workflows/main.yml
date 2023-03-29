@@ -24,3 +24,10 @@ jobs:
           file: nginx/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: a${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          # options: -v ${{ github.workspace }}:/var/www
+          run: |
+              nginx --version
