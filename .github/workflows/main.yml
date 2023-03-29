@@ -30,4 +30,4 @@ jobs:
           image: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
           # options: -v ${{ github.workspace }}:/var/www
           run: |
-              nginx --version
+              nginx -v
